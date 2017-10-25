@@ -218,6 +218,21 @@ function mtfInit()
         contentFlash.TSetProperty("/", contentFlashSize.T_HEIGHT_SCALE_INDEX, 100 / contentFlashSize.scaleFactor);
         contentFlash.TSetProperty("/", contentFlashSize.T_WIDTH_SCALE_INDEX, 100 / contentFlashSize.scaleFactor);
     }
+
+    js_analyticsTrackGameEvent = function(gameEvent)
+    {
+        if(gameName === 'Live' && gameEvent === 'Start')
+        {
+            matchView.checked = true;
+            transformContentFlash();
+        }
+
+        if(gameName === 'Live' && gameEvent === 'Finish')
+        {
+            matchView.checked = false;
+            transformContentFlash();
+        }
+    }
 }
 
 document.body.appendChild( document.createElement('style') ).textContent = '* { margin: 0; } :root{ image-rendering: optimizespeed; } @viewport { zoom: 1; min-zoom: 1; max-zoom: 1; user-zoom: fixed; } * { margin: 0; padding: 0; outline: none; box-sizing: border-box; } body { background: url(http://tetrisow-a.akamaihd.net/data5_0_0_1/images/bg.jpg) repeat-x; margin: 0; display: block; overflow: hidden; } embed, #matchBackground { position: absolute; top: 50%; left: 50%; }';
@@ -254,10 +269,10 @@ function haveFlashVars(responseText, flashVars)
     delete flashVars.channelId;
     delete flashVars.numGamesToPlayAd;
     delete flashVars.isPrerollEnabled;
-    delete flashVars.isAnalyticsEnabled;
     delete flashVars.isPrerollEnabled;
     delete flashVars.prerollId;
 
+    flashVars.isAnalyticsEnabled = true;
     flashVars.startParam = theStartParam;
 
     flashVarsParamString = Object.keys( flashVars ).map(k => k + '=' + flashVars[k] ).join('&');

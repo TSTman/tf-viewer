@@ -2,11 +2,11 @@
 // @name Tetris Friends Viewer
 // @namespace tetrisfriendsviewer
 // @description A nice window to view games in
-// @include http://*tetrisfriends.com/games/Ultra/game.php*
-// @include http://*tetrisfriends.com/games/Sprint/game.php*
-// @include http://*tetrisfriends.com/games/Survival/game.php*
-// @include http://*tetrisfriends.com/games/Marathon/game.php*
-// @include http://*tetrisfriends.com/games/Live/game.php*
+// @include http*://*tetrisfriends.com/games/Ultra/game.php*
+// @include http*://*tetrisfriends.com/games/Sprint/game.php*
+// @include http*://*tetrisfriends.com/games/Survival/game.php*
+// @include http*://*tetrisfriends.com/games/Marathon/game.php*
+// @include http*://*tetrisfriends.com/games/Live/game.php*
 // @grant none
 // @run-at document-start
 // @version 0.0.1
@@ -81,7 +81,7 @@ function mtfInit()
     matchBackground.src = 'https://i.imgur.com/kddrOL1.png';
     matchBackground.id = 'matchBackground';
 
-    contentFlash.setAttribute("src", "http://www.tetrisfriends.com/data/games/" + gameName + "/" + gameFileName[ gameName ] + '?livebust=0173?version=0');
+    contentFlash.setAttribute("src", "https://www.tetrisfriends.com/data/games/" + gameName + "/" + gameFileName[ gameName ] + '?livebust=0178?version=0');
 
     runOnContentFlashLoaded();
     addEventListener("resize", transformContentFlash );
@@ -235,7 +235,7 @@ function mtfInit()
     }
 }
 
-document.body.appendChild( document.createElement('style') ).textContent = '* { margin: 0; } :root{ image-rendering: optimizespeed; } @viewport { zoom: 1; min-zoom: 1; max-zoom: 1; user-zoom: fixed; } * { margin: 0; padding: 0; outline: none; box-sizing: border-box; } body { background: url(http://tetrisow-a.akamaihd.net/data5_0_0_1/images/bg.jpg) repeat-x; margin: 0; display: block; overflow: hidden; } embed, #matchBackground { position: absolute; top: 50%; left: 50%; }';
+document.body.appendChild( document.createElement('style') ).textContent = '* { margin: 0; } :root{ image-rendering: optimizespeed; } @viewport { zoom: 1; min-zoom: 1; max-zoom: 1; user-zoom: fixed; } * { margin: 0; padding: 0; outline: none; box-sizing: border-box; } body { background: url(//tetrisow-a.akamaihd.net/data/images/bg.jpg) repeat-x; margin: 0; display: block; overflow: hidden; } embed, #matchBackground { position: absolute; top: 50%; left: 50%; }';
 
 buildFlashVarsParamString();
 
